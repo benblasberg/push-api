@@ -1,0 +1,126 @@
+syntax = "proto3";
+
+package server;
+
+option go_package = "server/proto";
+
+message Event {
+  string dbr_id = 1;
+  string date = 2;
+  int64 event_id = 3;
+  int32 season = 4;
+  int32 week = 5;
+  Response response = 6;
+}
+
+message Response {
+  string id = 1;
+  Type type = 2;
+  State state = 3;
+  Grade grade = 4;
+  bool single_match = 5;
+  repeated Game games = 6;
+  Status status = 7;
+  Duration duration = 8;
+  Probs probs = 9;
+  repeated Market markets = 10;
+}
+
+message Type {
+  string description = 1;
+  int64 id = 2;
+}
+
+message State {
+  int32 id = 1;
+  string name = 2;
+}
+
+message Grade {
+  string code = 1;
+  string name = 2;
+}
+
+message Game {
+  int64 id = 1;
+  int32 season = 2;
+  int32 week = 3;
+  Teams teams = 4;
+}
+
+message Teams {
+  TeamRef home = 1;
+  TeamRef away = 2;
+}
+
+message TeamRef {
+  string abbr = 1;
+  int32 id = 2;
+}
+
+message Status {
+  SuspendedStatus parlay_suspended = 1;
+  ModifiedAt modified_at = 2;
+}
+
+message SuspendedStatus {
+  int32 id = 1;
+  bool value = 2;
+  string description = 3;
+}
+
+message ModifiedAt {
+  string second = 1;
+  string micro = 2;
+}
+
+message Duration {
+  int32 id = 1;
+  string description = 2;
+  int32 start = 3;
+  int32 end = 4;
+}
+
+message Probs {
+  StandardProbs standard = 1;
+}
+
+message StandardProbs {
+  double over = 1;
+  double under = 2;
+  double push = 3;
+}
+
+message Market {
+  MarketStatus status = 1;
+  Stat stat = 2;
+  GameRef game = 3;
+  TeamRef team = 4;
+  Player player = 5;
+  Line line = 6;
+  Grade grade = 7;
+  Probs probs = 8;
+}
+
+message MarketStatus {
+  SuspendedStatus market_suspended = 1;
+}
+
+message Stat {
+  int32 id = 1;
+  string name = 2;
+}
+
+message GameRef {
+  int64 id = 1;
+}
+
+message Player {
+  int64 id = 1;
+  string name = 2;
+}
+
+message Line {
+  double value = 1;
+  string type = 2;
+}

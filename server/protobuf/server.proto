@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package server;
+
+option go_package = "server/proto";
+
+import "google/protobuf/struct.proto";
+
+message Team {
+  int32 team_id = 1;
+  string team_abbr = 2;
+  string location = 3;
+  string team_name = 4;
+  string team_full_name = 5;
+  string league = 6;
+  int32 division_id = 7;
+}
+
+message StreamTeamResponse {
+    google.protobuf.Struct metadata = 1;
+    repeated Team team = 2;
+}
+
+message StreamTeamRequest {
+    string token = 1;
+}
+
+service PushService {
+  rpc StreamTeams(StreamTeamRequest) returns (stream StreamTeamResponse) {}
+}
