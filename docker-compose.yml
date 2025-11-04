@@ -1,0 +1,57 @@
+services:
+  server:
+    container_name: server
+    build:
+      dockerfile: server/Dockerfile
+    depends_on:
+      - kafka
+    ports:
+      - 5000:5000
+    networks:
+      - app_net
+  client:
+    build:
+      dockerfile: client/Dockerfile
+    depends_on:
+      - server
+    networks:
+      - app_net
+  # producer:
+  #   build:
+  #     context: ./producer
+  #     dockerfile: Dockerfile
+  #   depends_on:
+  #     - kafka
+  #   environment:
+  #     KAFKA_BOOTSTRAP_SERVERS: kafka:9092
+  #     KAFKA_TOPIC: teams
+  #     DATA_FILE_PATH: /app/data/data-packet-1.json
+  #   volumes:
+  #     - ./data-packet-1.json:/app/data/data-packet-1.json:ro
+  #   networks:
+  #     - app_net
+  kafka:
+    image: apache/kafka:latest
+    container_name: broker
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://:9092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://:9092
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 1
+    healthcheck:
+      test: kafka-topics --bootstrap-server broker:9092 --list
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - app_net
+networks:
+  app_net:

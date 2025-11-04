@@ -1,0 +1,49 @@
+{
+  "data": [
+      {
+          "teamId": 120,
+          "teamAbbr": "WSH",
+          "location": "Washington",
+          "teamName": "Nationals",
+          "teamFullName": "Washington Nationals",
+          "league": "NL",
+          "divisionId": 204
+      },
+      {
+          "teamId": 121,
+          "teamAbbr": "NYM",
+          "location": "New York",
+          "teamName": "Mets",
+          "teamFullName": "New York Mets",
+          "league": "NL",
+          "divisionId": 204
+      },
+      {
+          "teamId": 143,
+          "teamAbbr": "PHI",
+          "location": "Philadelphia",
+          "teamName": "Phillies",
+          "teamFullName": "Philadelphia Phillies",
+          "league": "NL",
+          "divisionId": 204
+      },
+      {
+          "teamId": 144,
+          "teamAbbr": "ATL",
+          "location": "Atlanta",
+          "teamName": "Braves",
+          "teamFullName": "Atlanta Braves",
+          "league": "NL",
+          "divisionId": 204
+      },
+      {
+          "teamId": 146,
+          "teamAbbr": "MIA",
+          "location": "Miami",
+          "teamName": "Marlins",
+          "teamFullName": "Miami Marlins",
+          "league": "NL",
+          "divisionId": 204
+      }
+  ]
+}
