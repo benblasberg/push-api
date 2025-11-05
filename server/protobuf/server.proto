@@ -6,6 +6,8 @@ option go_package = "server/proto";
 
 import "google/protobuf/struct.proto";
 
+import "event.proto";
+
 message Team {
   int32 team_id = 1;
   string team_abbr = 2;
@@ -21,10 +23,21 @@ message StreamTeamResponse {
     repeated Team team = 2;
 }
 
+message StreamEventResponse {
+    google.protobuf.Struct metadata = 1;
+    repeated Event event = 2;
+}
+
 message StreamTeamRequest {
+    string token = 1;
+}
+
+message StreamEventRequest {
     string token = 1;
 }
 
 service PushService {
   rpc StreamTeams(StreamTeamRequest) returns (stream StreamTeamResponse) {}
+
+  rpc StreamEvents(StreamEventRequest) returns (stream StreamEventResponse) {}
 }

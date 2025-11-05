@@ -19,7 +19,8 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	PushService_StreamTeams_FullMethodName = "/server.PushService/StreamTeams"
+	PushService_StreamTeams_FullMethodName  = "/server.PushService/StreamTeams"
+	PushService_StreamEvents_FullMethodName = "/server.PushService/StreamEvents"
 )
 
 // PushServiceClient is the client API for PushService service.
@@ -27,6 +28,7 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PushServiceClient interface {
 	StreamTeams(ctx context.Context, in *StreamTeamRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamTeamResponse], error)
+	StreamEvents(ctx context.Context, in *StreamEventRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamEventResponse], error)
 }
 
 type pushServiceClient struct {
@@ -56,11 +58,31 @@ func (c *pushServiceClient) StreamTeams(ctx context.Context, in *StreamTeamReque
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type PushService_StreamTeamsClient = grpc.ServerStreamingClient[StreamTeamResponse]
 
+func (c *pushServiceClient) StreamEvents(ctx context.Context, in *StreamEventRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[StreamEventResponse], error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	stream, err := c.cc.NewStream(ctx, &PushService_ServiceDesc.Streams[1], PushService_StreamEvents_FullMethodName, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	x := &grpc.GenericClientStream[StreamEventRequest, StreamEventResponse]{ClientStream: stream}
+	if err := x.ClientStream.SendMsg(in); err != nil {
+		return nil, err
+	}
+	if err := x.ClientStream.CloseSend(); err != nil {
+		return nil, err
+	}
+	return x, nil
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type PushService_StreamEventsClient = grpc.ServerStreamingClient[StreamEventResponse]
+
 // PushServiceServer is the server API for PushService service.
 // All implementations must embed UnimplementedPushServiceServer
 // for forward compatibility.
 type PushServiceServer interface {
 	StreamTeams(*StreamTeamRequest, grpc.ServerStreamingServer[StreamTeamResponse]) error
+	StreamEvents(*StreamEventRequest, grpc.ServerStreamingServer[StreamEventResponse]) error
 	mustEmbedUnimplementedPushServiceServer()
 }
 
@@ -73,6 +95,9 @@ type UnimplementedPushServiceServer struct{}
 
 func (UnimplementedPushServiceServer) StreamTeams(*StreamTeamRequest, grpc.ServerStreamingServer[StreamTeamResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method StreamTeams not implemented")
+}
+func (UnimplementedPushServiceServer) StreamEvents(*StreamEventRequest, grpc.ServerStreamingServer[StreamEventResponse]) error {
+	return status.Errorf(codes.Unimplemented, "method StreamEvents not implemented")
 }
 func (UnimplementedPushServiceServer) mustEmbedUnimplementedPushServiceServer() {}
 func (UnimplementedPushServiceServer) testEmbeddedByValue()                     {}
@@ -106,6 +131,17 @@ func _PushService_StreamTeams_Handler(srv interface{}, stream grpc.ServerStream)
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type PushService_StreamTeamsServer = grpc.ServerStreamingServer[StreamTeamResponse]
 
+func _PushService_StreamEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(StreamEventRequest)
+	if err := stream.RecvMsg(m); err != nil {
+		return err
+	}
+	return srv.(PushServiceServer).StreamEvents(m, &grpc.GenericServerStream[StreamEventRequest, StreamEventResponse]{ServerStream: stream})
+}
+
+// This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
+type PushService_StreamEventsServer = grpc.ServerStreamingServer[StreamEventResponse]
+
 // PushService_ServiceDesc is the grpc.ServiceDesc for PushService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -117,6 +153,11 @@ var PushService_ServiceDesc = grpc.ServiceDesc{
 		{
 			StreamName:    "StreamTeams",
 			Handler:       _PushService_StreamTeams_Handler,
+			ServerStreams: true,
+		},
+		{
+			StreamName:    "StreamEvents",
+			Handler:       _PushService_StreamEvents_Handler,
 			ServerStreams: true,
 		},
 	},

@@ -1,0 +1,874 @@
+{
+    "results": [
+        {
+            "dbrId": "21100012656657",
+            "date": "2024-09-08",
+            "eventId": 2656657,
+            "season": 2024,
+            "week": 1,
+            "response": {
+                "id": "21100012656657",
+                "type": {
+                    "description": "Joe Burrow & Jacoby Brissett both passing yards > 274.5",
+                    "id": 2110001
+                },
+                "state": {
+                    "id": 4,
+                    "name": "Final"
+                },
+                "grade": {
+                    "code": "L",
+                    "name": "loss"
+                },
+                "singleMatch": true,
+                "games": [
+                    {
+                        "id": 2656657,
+                        "season": 2024,
+                        "week": 1,
+                        "teams": {
+                            "home": {
+                                "abbr": "Cin",
+                                "id": 327
+                            },
+                            "away": {
+                                "abbr": "NE",
+                                "id": 348
+                            }
+                        }
+                    }
+                ],
+                "status": {
+                    "parlaySuspended": {
+                        "id": 2,
+                        "value": true,
+                        "description": "parlay suspended"
+                    },
+                    "modifiedAt": {
+                        "second": "2024-09-08 19:55:24",
+                        "micro": "2024-09-08 19:55:24.730265"
+                    }
+                },
+                "duration": {
+                    "id": 7,
+                    "description": "Full Game",
+                    "start": 1,
+                    "end": 99
+                },
+                "probs": {
+                    "standard": {
+                        "over": 0,
+                        "under": 1,
+                        "push": 0
+                    }
+                },
+                "markets": [
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "passing_yards_qb_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 1,
+                            "name": "passing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 348,
+                            "abbr": "NE"
+                        },
+                        "player": {
+                            "id": 607047,
+                            "name": "Jacoby Brissett"
+                        },
+                        "line": {
+                            "value": 274.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    },
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "player_market_suspended_new_player"
+                            }
+                        },
+                        "stat": {
+                            "id": 1,
+                            "name": "passing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 327,
+                            "abbr": "Cin"
+                        },
+                        "player": {
+                            "id": 878785,
+                            "name": "Joe Burrow"
+                        },
+                        "line": {
+                            "value": 274.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0.0001,
+                                "under": 0.9999,
+                                "push": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "updatedAt": "2024-09-08 19:55:24"
+        },
+        {
+            "dbrId": "21100022656657",
+            "date": "2024-09-08",
+            "eventId": 2656657,
+            "season": 2024,
+            "week": 1,
+            "response": {
+                "id": "21100022656657",
+                "type": {
+                    "description": "Joe Burrow & Jacoby Brissett both passing yards > 299.5",
+                    "id": 2110002
+                },
+                "state": {
+                    "id": 4,
+                    "name": "Final"
+                },
+                "grade": {
+                    "code": "L",
+                    "name": "loss"
+                },
+                "singleMatch": true,
+                "games": [
+                    {
+                        "id": 2656657,
+                        "season": 2024,
+                        "week": 1,
+                        "teams": {
+                            "home": {
+                                "abbr": "Cin",
+                                "id": 327
+                            },
+                            "away": {
+                                "abbr": "NE",
+                                "id": 348
+                            }
+                        }
+                    }
+                ],
+                "status": {
+                    "parlaySuspended": {
+                        "id": 2,
+                        "value": true,
+                        "description": "parlay suspended"
+                    },
+                    "modifiedAt": {
+                        "second": "2024-09-08 19:55:24",
+                        "micro": "2024-09-08 19:55:24.730265"
+                    }
+                },
+                "duration": {
+                    "id": 7,
+                    "description": "Full Game",
+                    "start": 1,
+                    "end": 99
+                },
+                "probs": {
+                    "standard": {
+                        "over": 0,
+                        "under": 1,
+                        "push": 0
+                    }
+                },
+                "markets": [
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "passing_yards_qb_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 1,
+                            "name": "passing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 348,
+                            "abbr": "NE"
+                        },
+                        "player": {
+                            "id": 607047,
+                            "name": "Jacoby Brissett"
+                        },
+                        "line": {
+                            "value": 299.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    },
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "player_market_suspended_new_player"
+                            }
+                        },
+                        "stat": {
+                            "id": 1,
+                            "name": "passing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 327,
+                            "abbr": "Cin"
+                        },
+                        "player": {
+                            "id": 878785,
+                            "name": "Joe Burrow"
+                        },
+                        "line": {
+                            "value": 299.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "updatedAt": "2024-09-08 19:55:24"
+        },
+        {
+            "dbrId": "21100032656657",
+            "date": "2024-09-08",
+            "eventId": 2656657,
+            "season": 2024,
+            "week": 1,
+            "response": {
+                "id": "21100032656657",
+                "type": {
+                    "description": "Joe Burrow & Jacoby Brissett both passing yards > 324.5",
+                    "id": 2110003
+                },
+                "state": {
+                    "id": 4,
+                    "name": "Final"
+                },
+                "grade": {
+                    "code": "L",
+                    "name": "loss"
+                },
+                "singleMatch": true,
+                "games": [
+                    {
+                        "id": 2656657,
+                        "season": 2024,
+                        "week": 1,
+                        "teams": {
+                            "home": {
+                                "abbr": "Cin",
+                                "id": 327
+                            },
+                            "away": {
+                                "abbr": "NE",
+                                "id": 348
+                            }
+                        }
+                    }
+                ],
+                "status": {
+                    "parlaySuspended": {
+                        "id": 2,
+                        "value": true,
+                        "description": "parlay suspended"
+                    },
+                    "modifiedAt": {
+                        "second": "2024-09-08 19:55:24",
+                        "micro": "2024-09-08 19:55:24.730265"
+                    }
+                },
+                "duration": {
+                    "id": 7,
+                    "description": "Full Game",
+                    "start": 1,
+                    "end": 99
+                },
+                "probs": {
+                    "standard": {
+                        "over": 0,
+                        "under": 1,
+                        "push": 0
+                    }
+                },
+                "markets": [
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "passing_yards_qb_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 1,
+                            "name": "passing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 348,
+                            "abbr": "NE"
+                        },
+                        "player": {
+                            "id": 607047,
+                            "name": "Jacoby Brissett"
+                        },
+                        "line": {
+                            "value": 324.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    },
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "player_market_suspended_new_player"
+                            }
+                        },
+                        "stat": {
+                            "id": 1,
+                            "name": "passing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 327,
+                            "abbr": "Cin"
+                        },
+                        "player": {
+                            "id": 878785,
+                            "name": "Joe Burrow"
+                        },
+                        "line": {
+                            "value": 324.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "updatedAt": "2024-09-08 19:55:24"
+        },
+        {
+            "dbrId": "21100042656657",
+            "date": "2024-09-08",
+            "eventId": 2656657,
+            "season": 2024,
+            "week": 1,
+            "response": {
+                "id": "21100042656657",
+                "type": {
+                    "description": "Joe Burrow & Jacoby Brissett both passing touchdowns > 1.5",
+                    "id": 2110004
+                },
+                "state": {
+                    "id": 4,
+                    "name": "Final"
+                },
+                "grade": {
+                    "code": "L",
+                    "name": "loss"
+                },
+                "singleMatch": true,
+                "games": [
+                    {
+                        "id": 2656657,
+                        "season": 2024,
+                        "week": 1,
+                        "teams": {
+                            "home": {
+                                "abbr": "Cin",
+                                "id": 327
+                            },
+                            "away": {
+                                "abbr": "NE",
+                                "id": 348
+                            }
+                        }
+                    }
+                ],
+                "status": {
+                    "parlaySuspended": {
+                        "id": 2,
+                        "value": true,
+                        "description": "parlay suspended"
+                    },
+                    "modifiedAt": {
+                        "second": "2024-09-08 19:55:24",
+                        "micro": "2024-09-08 19:55:24.730265"
+                    }
+                },
+                "duration": {
+                    "id": 7,
+                    "description": "Full Game",
+                    "start": 1,
+                    "end": 99
+                },
+                "probs": {
+                    "standard": {
+                        "over": 0,
+                        "under": 1,
+                        "push": 0
+                    }
+                },
+                "markets": [
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "passing_touchdowns_qb_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 2,
+                            "name": "passing touchdowns"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 348,
+                            "abbr": "NE"
+                        },
+                        "player": {
+                            "id": 607047,
+                            "name": "Jacoby Brissett"
+                        },
+                        "line": {
+                            "value": 1.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    },
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "passing_touchdowns_qb_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 2,
+                            "name": "passing touchdowns"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 327,
+                            "abbr": "Cin"
+                        },
+                        "player": {
+                            "id": 878785,
+                            "name": "Joe Burrow"
+                        },
+                        "line": {
+                            "value": 1.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0.0001,
+                                "under": 0.9999,
+                                "push": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "updatedAt": "2024-09-08 19:55:24"
+        },
+        {
+            "dbrId": "21100072656657",
+            "date": "2024-09-08",
+            "eventId": 2656657,
+            "season": 2024,
+            "week": 1,
+            "response": {
+                "id": "21100072656657",
+                "type": {
+                    "description": "Rhamondre Stevenson & Zack Moss both rushing yards > 99.5",
+                    "id": 2110007
+                },
+                "state": {
+                    "id": 4,
+                    "name": "Final"
+                },
+                "grade": {
+                    "code": "L",
+                    "name": "loss"
+                },
+                "singleMatch": true,
+                "games": [
+                    {
+                        "id": 2656657,
+                        "season": 2024,
+                        "week": 1,
+                        "teams": {
+                            "home": {
+                                "abbr": "Cin",
+                                "id": 327
+                            },
+                            "away": {
+                                "abbr": "NE",
+                                "id": 348
+                            }
+                        }
+                    }
+                ],
+                "status": {
+                    "parlaySuspended": {
+                        "id": 2,
+                        "value": true,
+                        "description": "parlay suspended"
+                    },
+                    "modifiedAt": {
+                        "second": "2024-09-08 19:55:24",
+                        "micro": "2024-09-08 19:55:24.730265"
+                    }
+                },
+                "duration": {
+                    "id": 7,
+                    "description": "Full Game",
+                    "start": 1,
+                    "end": 99
+                },
+                "probs": {
+                    "standard": {
+                        "over": 0,
+                        "under": 1,
+                        "push": 0
+                    }
+                },
+                "markets": [
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "player_has_sus_props"
+                            }
+                        },
+                        "stat": {
+                            "id": 5,
+                            "name": "rushing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 327,
+                            "abbr": "Cin"
+                        },
+                        "player": {
+                            "id": 913170,
+                            "name": "Zack Moss"
+                        },
+                        "line": {
+                            "value": 99.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    },
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "rushing_yards_rb_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 5,
+                            "name": "rushing yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 348,
+                            "abbr": "NE"
+                        },
+                        "player": {
+                            "id": 1174682,
+                            "name": "Rhamondre Stevenson"
+                        },
+                        "line": {
+                            "value": 99.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "W",
+                            "name": "win"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 1,
+                                "under": 0,
+                                "push": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "updatedAt": "2024-09-08 19:55:24"
+        },
+        {
+            "dbrId": "21100132656657",
+            "date": "2024-09-08",
+            "eventId": 2656657,
+            "season": 2024,
+            "week": 1,
+            "response": {
+                "id": "21100132656657",
+                "type": {
+                    "description": "Ja'Marr Chase & DeMario Douglas both receiving yards > 99.5",
+                    "id": 2110013
+                },
+                "state": {
+                    "id": 4,
+                    "name": "Final"
+                },
+                "grade": {
+                    "code": "L",
+                    "name": "loss"
+                },
+                "singleMatch": true,
+                "games": [
+                    {
+                        "id": 2656657,
+                        "season": 2024,
+                        "week": 1,
+                        "teams": {
+                            "home": {
+                                "abbr": "Cin",
+                                "id": 327
+                            },
+                            "away": {
+                                "abbr": "NE",
+                                "id": 348
+                            }
+                        }
+                    }
+                ],
+                "status": {
+                    "parlaySuspended": {
+                        "id": 2,
+                        "value": true,
+                        "description": "parlay suspended"
+                    },
+                    "modifiedAt": {
+                        "second": "2024-09-08 19:55:24",
+                        "micro": "2024-09-08 19:55:24.730265"
+                    }
+                },
+                "duration": {
+                    "id": 7,
+                    "description": "Full Game",
+                    "start": 1,
+                    "end": 99
+                },
+                "probs": {
+                    "standard": {
+                        "over": 0,
+                        "under": 1,
+                        "push": 0
+                    }
+                },
+                "markets": [
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "player_market_suspended_new_player"
+                            }
+                        },
+                        "stat": {
+                            "id": 3,
+                            "name": "receiving yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 327,
+                            "abbr": "Cin"
+                        },
+                        "player": {
+                            "id": 1109979,
+                            "name": "Ja'Marr Chase"
+                        },
+                        "line": {
+                            "value": 99.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0.0089,
+                                "under": 0.9911,
+                                "push": 0
+                            }
+                        }
+                    },
+                    {
+                        "status": {
+                            "marketSuspended": {
+                                "id": 2,
+                                "value": true,
+                                "description": "receiving_yards_wr_sigma"
+                            }
+                        },
+                        "stat": {
+                            "id": 3,
+                            "name": "receiving yards"
+                        },
+                        "game": {
+                            "id": 2656657
+                        },
+                        "team": {
+                            "id": 348,
+                            "abbr": "NE"
+                        },
+                        "player": {
+                            "id": 1175693,
+                            "name": "DeMario Douglas"
+                        },
+                        "line": {
+                            "value": 99.5,
+                            "type": "fraction"
+                        },
+                        "grade": {
+                            "code": "L",
+                            "name": "loss"
+                        },
+                        "probs": {
+                            "standard": {
+                                "over": 0,
+                                "under": 1,
+                                "push": 0
+                            }
+                        }
+                    }
+                ]
+            },
+            "updatedAt": "2024-09-08 19:55:24"
+        }
+    ]
+}

@@ -7,12 +7,13 @@
 package proto
 
 import (
-	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
-	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	structpb "google.golang.org/protobuf/types/known/structpb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
+
+	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
+	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	structpb "google.golang.org/protobuf/types/known/structpb"
 )
 
 const (
@@ -166,6 +167,58 @@ func (x *StreamTeamResponse) GetTeam() []*Team {
 	return nil
 }
 
+type StreamEventResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Metadata      *structpb.Struct       `protobuf:"bytes,1,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Event         []*Event               `protobuf:"bytes,2,rep,name=event,proto3" json:"event,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StreamEventResponse) Reset() {
+	*x = StreamEventResponse{}
+	mi := &file_server_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StreamEventResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StreamEventResponse) ProtoMessage() {}
+
+func (x *StreamEventResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_server_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StreamEventResponse.ProtoReflect.Descriptor instead.
+func (*StreamEventResponse) Descriptor() ([]byte, []int) {
+	return file_server_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *StreamEventResponse) GetMetadata() *structpb.Struct {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
+func (x *StreamEventResponse) GetEvent() []*Event {
+	if x != nil {
+		return x.Event
+	}
+	return nil
+}
+
 type StreamTeamRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
@@ -175,7 +228,7 @@ type StreamTeamRequest struct {
 
 func (x *StreamTeamRequest) Reset() {
 	*x = StreamTeamRequest{}
-	mi := &file_server_proto_msgTypes[2]
+	mi := &file_server_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -187,7 +240,7 @@ func (x *StreamTeamRequest) String() string {
 func (*StreamTeamRequest) ProtoMessage() {}
 
 func (x *StreamTeamRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_server_proto_msgTypes[2]
+	mi := &file_server_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -200,10 +253,54 @@ func (x *StreamTeamRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StreamTeamRequest.ProtoReflect.Descriptor instead.
 func (*StreamTeamRequest) Descriptor() ([]byte, []int) {
-	return file_server_proto_rawDescGZIP(), []int{2}
+	return file_server_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *StreamTeamRequest) GetToken() string {
+	if x != nil {
+		return x.Token
+	}
+	return ""
+}
+
+type StreamEventRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *StreamEventRequest) Reset() {
+	*x = StreamEventRequest{}
+	mi := &file_server_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *StreamEventRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*StreamEventRequest) ProtoMessage() {}
+
+func (x *StreamEventRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_server_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use StreamEventRequest.ProtoReflect.Descriptor instead.
+func (*StreamEventRequest) Descriptor() ([]byte, []int) {
+	return file_server_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *StreamEventRequest) GetToken() string {
 	if x != nil {
 		return x.Token
 	}
@@ -214,7 +311,7 @@ var File_server_proto protoreflect.FileDescriptor
 
 const file_server_proto_rawDesc = "" +
 	"\n" +
-	"\fserver.proto\x12\x06server\x1a\x1cgoogle/protobuf/struct.proto\"\xd4\x01\n" +
+	"\fserver.proto\x12\x06server\x1a\x1cgoogle/protobuf/struct.proto\x1a\vevent.proto\"\xd4\x01\n" +
 	"\x04Team\x12\x17\n" +
 	"\ateam_id\x18\x01 \x01(\x05R\x06teamId\x12\x1b\n" +
 	"\tteam_abbr\x18\x02 \x01(\tR\bteamAbbr\x12\x1a\n" +
@@ -226,11 +323,17 @@ const file_server_proto_rawDesc = "" +
 	"divisionId\"k\n" +
 	"\x12StreamTeamResponse\x123\n" +
 	"\bmetadata\x18\x01 \x01(\v2\x17.google.protobuf.StructR\bmetadata\x12 \n" +
-	"\x04team\x18\x02 \x03(\v2\f.server.TeamR\x04team\")\n" +
+	"\x04team\x18\x02 \x03(\v2\f.server.TeamR\x04team\"o\n" +
+	"\x13StreamEventResponse\x123\n" +
+	"\bmetadata\x18\x01 \x01(\v2\x17.google.protobuf.StructR\bmetadata\x12#\n" +
+	"\x05event\x18\x02 \x03(\v2\r.server.EventR\x05event\")\n" +
 	"\x11StreamTeamRequest\x12\x14\n" +
-	"\x05token\x18\x01 \x01(\tR\x05token2W\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token\"*\n" +
+	"\x12StreamEventRequest\x12\x14\n" +
+	"\x05token\x18\x01 \x01(\tR\x05token2\xa4\x01\n" +
 	"\vPushService\x12H\n" +
-	"\vStreamTeams\x12\x19.server.StreamTeamRequest\x1a\x1a.server.StreamTeamResponse\"\x000\x01B\x0eZ\fserver/protob\x06proto3"
+	"\vStreamTeams\x12\x19.server.StreamTeamRequest\x1a\x1a.server.StreamTeamResponse\"\x000\x01\x12K\n" +
+	"\fStreamEvents\x12\x1a.server.StreamEventRequest\x1a\x1b.server.StreamEventResponse\"\x000\x01B\x0eZ\fserver/protob\x06proto3"
 
 var (
 	file_server_proto_rawDescOnce sync.Once
@@ -244,23 +347,30 @@ func file_server_proto_rawDescGZIP() []byte {
 	return file_server_proto_rawDescData
 }
 
-var file_server_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_server_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_server_proto_goTypes = []any{
-	(*Team)(nil),               // 0: server.Team
-	(*StreamTeamResponse)(nil), // 1: server.StreamTeamResponse
-	(*StreamTeamRequest)(nil),  // 2: server.StreamTeamRequest
-	(*structpb.Struct)(nil),    // 3: google.protobuf.Struct
+	(*Team)(nil),                // 0: server.Team
+	(*StreamTeamResponse)(nil),  // 1: server.StreamTeamResponse
+	(*StreamEventResponse)(nil), // 2: server.StreamEventResponse
+	(*StreamTeamRequest)(nil),   // 3: server.StreamTeamRequest
+	(*StreamEventRequest)(nil),  // 4: server.StreamEventRequest
+	(*structpb.Struct)(nil),     // 5: google.protobuf.Struct
+	(*Event)(nil),               // 6: server.Event
 }
 var file_server_proto_depIdxs = []int32{
-	3, // 0: server.StreamTeamResponse.metadata:type_name -> google.protobuf.Struct
+	5, // 0: server.StreamTeamResponse.metadata:type_name -> google.protobuf.Struct
 	0, // 1: server.StreamTeamResponse.team:type_name -> server.Team
-	2, // 2: server.PushService.StreamTeams:input_type -> server.StreamTeamRequest
-	1, // 3: server.PushService.StreamTeams:output_type -> server.StreamTeamResponse
-	3, // [3:4] is the sub-list for method output_type
-	2, // [2:3] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	5, // 2: server.StreamEventResponse.metadata:type_name -> google.protobuf.Struct
+	6, // 3: server.StreamEventResponse.event:type_name -> server.Event
+	3, // 4: server.PushService.StreamTeams:input_type -> server.StreamTeamRequest
+	4, // 5: server.PushService.StreamEvents:input_type -> server.StreamEventRequest
+	1, // 6: server.PushService.StreamTeams:output_type -> server.StreamTeamResponse
+	2, // 7: server.PushService.StreamEvents:output_type -> server.StreamEventResponse
+	6, // [6:8] is the sub-list for method output_type
+	4, // [4:6] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_server_proto_init() }
@@ -268,13 +378,14 @@ func file_server_proto_init() {
 	if File_server_proto != nil {
 		return
 	}
+	file_event_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_server_proto_rawDesc), len(file_server_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
