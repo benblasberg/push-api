@@ -11,7 +11,7 @@ reading all topics from kafka.
 
 To keep an eye on our services running in production we can instrument our grpc servers with open telemetry. This exposes metrics like number of requests,
 request duration, memory usage, cpu usage. We would want alerts around high failure to connect rates from clients and within our servers if number of connections
-becomes too high.
+becomes too high. These metrics can be exported to a number of different visualization tools. Another thing we should measure is end to end latency of the messages from kafka to the enduser clients.
 
 Kafka is not our only choice for pushing data streams to the servers. We could use any pub sub system. For example if we really don't care about durability and
 just want live data sent as fast as possible, redis pub sub could be swapped in here
