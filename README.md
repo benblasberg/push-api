@@ -16,10 +16,10 @@ The push server listens to kafka topics to receive events. These events are proc
 
 ## Design Decisions
 
-One way push from server - Using a grpc stream endpoint lets clients connect once and stream messages continually without having to poll the api. 
+- **One way push from server** - Using a grpc stream endpoint lets clients connect once and stream messages continually without having to poll the api. 
     Clients provide a `token` which the server validates and then begins streaming messages as they come in. The teams
     data seems more like reference data and could be a standard RESTful endpoint with caching to quickly return this data that rarely changes.
-Kafka for pushing data to the server - Servers subscribe to a kafka topic to receive either teams or events. Each server receives all messages,
+- **Kafka for pushing data to the server** - Servers subscribe to a kafka topic to receive either teams or events. Each server receives all messages,
     which allows us to add more servers as more clients try to connect. Since this is a push api, we only care about the latest messages so
     our consumers in the server code start at the last index. If we need to scale to multiple kafka write partitions, we can use the eventId
     as a message key so that updates from the same game are always in order.
