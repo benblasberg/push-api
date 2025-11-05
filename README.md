@@ -49,6 +49,11 @@ Optionally scale clients connected to the server
 docker compose up --scale client=3 -d
 ```
 
+To gracefully shut down
+```
+docker compose down -v
+```
+
 To run in both "modes":
 For part 1 the defaults will send data packet 1 at 5 req per second for 30 seconds
 

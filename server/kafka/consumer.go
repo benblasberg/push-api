@@ -71,6 +71,7 @@ func (c *Consumer[E]) Start(ctx context.Context) error {
 		Brokers:        c.Brokers,
 		Topic:          string(c.Topic),
 		CommitInterval: 0, // We don't need to commit our offset since we're only interested in live data
+		StartOffset:    kafka.LastOffset,
 	}
 
 	reader := kafka.NewReader(config)
